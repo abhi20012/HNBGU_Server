@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./login.css">
+</head>
+<body>
+	<div class="container">
+		<h2>User Details</h2>
+	<form id="sheetdb-form">
+		<input type="text" name="data[name]" placeholder="Full Name" required>
+		<input type="email" name="data[email]" placeholder="Email" required>
+		<input type="text" name="data[address]" placeholder=" Permanent Addrress" required>
+		<input type="numeric" name="data[aadhar]" placeholder="Aadhar Card Number" required>
+		<input type="numeric" id="phone" name="data[phone]" placeholder="Phone Number" required>
+		<select name="data[plan]" id="plan_amount">
+			<option value="149">System 1</option>
+			<option value="289">System 2</option>
+			<option value="699">System 3</option>
+		  </select>
+		<div id="payment">Pay Now</div>
+	</form>
+		<div class="divider">
+			<span>OR</span>
+		</div>	
+		<div>
+			<p>Go to <a href="../index.html" style="text-decoration: none;">Home Page</a> to know system's specification.</p>
+		</div>
+	</div>
+</div>
+
+			 <script>
+				const displayRazorPay = async () => {
+				var plan_amount = document.getElementById("plan_amount")
+				// const { email } = currUser
+		
+				const data = await fetch("https://donate-to-earth.onrender.com/razorpay", {
+					method: "POST",
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({ amount: Number(plan_amount.value) })
+				}).then((data) => data.json());
+		
+				// console.log(data)
+		
+				var options = {
+					"key": data.key,
+					"amount": data.amount,
+					"currency": data.currrency,
+					"name": "Donate To Earth",
+					"description": "Donation to save planet Earth.",
+					"image": "/logo.png",
+					"order_id": data.id,
+					"handler": async function (response) {
+
+						// sending data to google sheets
+						// var form = document.getElementById('sheetdb-form');
+						// form.addEventListener("submit", async (e) => {
+						// e.preventDefault();
+						await fetch("https://sheetdb.io/api/v1/6j65kcizhw60s", {
+							method : "POST",
+							body: new FormData(document.getElementById("sheetdb-form")),
+						}).then(
+							response => response.json()
+						).then((html) => {
+							// you can put any JS code here
+						alert("Payment Successfull")
+							window.open('../index.html');
+						});
+						// });
+					},
+					"prefill": {
+						"name": "Abhinav",
+						"email": "abc@def.com",
+						"contact" : `+918077342930`
+					},
+					"notes": {
+						"address": "Razorpay Corporate Office"
+					},
+					"theme": {
+						"color" : "#506AD4"
+					}
+				};
+				const paymentObject = new window.Razorpay(options);
+				paymentObject.open();
+				paymentObject.on('payment.failed', function (response) {
+					console.log(response.error.code);
+					console.log(response.error.description);
+					console.log(response.error.source);
+					console.log(response.error.step);
+					console.log(response.error.reason);
+					console.log(response.error.metadata.order_id);
+					console.log(response.error.metadata.payment_id);
+					alert("Payment Failed")
+				});
+		
+			}
+			var button = document.getElementById('payment');
+			button.addEventListener('click',()=>{
+				displayRazorPay();
+			})
+			</script>
+	<script src="https://kit.fontawesome.com/5822b6fbea.js" crossorigin="anonymous"></script>
+</body>
+</html>

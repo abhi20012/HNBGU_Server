@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Website </title>
+    <script src="tailwind_css/cdn.tailwindcss.com_3.3.2"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <meta property="og:image" content="https://www.hostinger.com/og-image.png">
+    <style>
+        #logo{
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #533a9f;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="overflow-x-hidden overflow-y-hidden relative w-full bg-white">
+        <div class="h-[88px] bg-white">
+        </div>
+        <div id="navBar" class="bg-white w-full fixed z-50" style="top:0; margin:0;">
+            <nav class="lg:mx-[40px] mx-[20px] lg:h-[88px] h-[62px] bg-white">
+                <div class="w-full h-[48px] lg:py-[22px] py-[10px] flex flex-row justify-between">
+                    <div class="flex flex-row my-auto gap-[20px] items-center pt-2">
+                        <div id="logo">HNBGU Server</div>
+                        <div class="flex flex-row gap-[5px]">
+                            <img src="assets/img/in-2x.webp" alt="IN" class="h-[18px] my-auto lg:block hidden">
+                            <span class="font-semibold my-auto lg:block hidden" style="color:#2F1C6A">English</span>
+                        </div>
+                    </div>
+                    <div class="my-auto flex flex-row gap-[20px] items-center">
+                        <ul class="flex flex-row gap-[30px]">
+                            <li class="my-auto lg:block hidden">
+                                <a href="#plans" class="my-auto">
+                                    <span class="font-normal my-auto" style="color:#000000">Plans</span>
+                                </a>
+                            </li>
+                            <li class="my-auto">
+                                <a href="#" class="my-auto lg:block hidden">
+                                    <span class="font-normal my-auto" style="color:#000000">About Us</span>
+                                </a>
+                            </li>
+                            <li class="my-auto flex-row gap-[8px] lg:flex hidden">
+                                <a href="#" class="my-auto">
+                                    <span class="font-normal my-auto" style="color:#000000">Hosting</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- <button class="px-[18px] py-[10px] font-semibold hover:scale-[1.02] hover:duration-300 lg:block hidden" style="border:2px solid #2F1C6A; border-radius:5px;"><a href="./user-registration/signup.html">Enter Your Details</a></button> -->
+                        <svg id="hamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="burger" role="presentation" class="pt-2 lg:hidden block h-nav__mobile-menu-burger h-icon-dark" style="width: 34px; height: 34px;"><g data-v-165629f9=""><path data-v-165629f9="" d="M2 5V7H22V5H2ZM2 11V13H22V11H2ZM2 17V19H22V17H2Z"></path></g></svg>
+                    </div>
+                    <div id="mobileMenu" class="mobile-menu fixed top-16 left-0 w-full h-full bg-white z-40 pt-5">
+                        <ul class="text-center">
+                            <li class="py-2">
+                                <div class="mx-[20px] flex flex-row justify-between">
+                                    <a href="#"><span style="color:#2F1C6A;" class="font-semibold text-xl">WordPress</span></a>
+                                    <svg data-v-7fc192fd="" data-v-3bed47a8="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="width: 20px; height: 20px;"><path fill="#2F1C6A" fill-rule="evenodd" clip-rule="evenodd" d="m2.18 11.103-.018-.11c-.157-.789-.165-5.1-.162-6.747.001-.392.228-.745.581-.908L9.582.092a.993.993 0 0 1 .836 0l7 3.246a1 1 0 0 1 .581.908c.004 1.647-.002 5.958-.153 6.747l-.018.11c-.995 5.355-4.638 7.763-7.517 8.843l-.008.003a.897.897 0 0 1-.605-.003c-2.88-1.08-6.514-3.479-7.518-8.843Zm14.19-.374-.02.113c-.844 4.513-3.81 6.601-6.346 7.604-2.534-1.002-5.493-3.082-6.346-7.605l-.02-.118-.005-.026v-.001l-.008-.065a5.636 5.636 0 0 1-.02-.205 19.219 19.219 0 0 1-.036-.653 72.81 72.81 0 0 1-.048-1.855C3.503 6.715 3.5 5.428 3.5 4.576L10 1.563l6.5 3.013c0 .852-.002 2.14-.02 3.343-.01.686-.024 1.336-.045 1.858-.01.261-.022.482-.035.655a5.763 5.763 0 0 1-.018.207l-.009.07-.004.02Zm-1.824-2.132a.758.758 0 0 0 0-1.07.75.75 0 0 0-1.064 0l-3.984 4.001-1.976-1.985a.75.75 0 0 0-1.064 0 .758.758 0 0 0 0 1.07l2.508 2.519a.75.75 0 0 0 1.065 0l4.515-4.535Z"></path></g></svg>
+                                </div>
+                            </li>
+                            <li class="py-2">
+                                <div class="mx-[20px] flex flex-row justify-between">
+                                    <a href="#"><span style="color:#2F1C6A;" class="font-semibold text-xl">Website Builder</span></a>
+                                    <svg data-v-7fc192fd="" data-v-3bed47a8="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="width: 20px; height: 20px;"><path fill="#2F1C6A" fill-rule="evenodd" clip-rule="evenodd" d="m2.18 11.103-.018-.11c-.157-.789-.165-5.1-.162-6.747.001-.392.228-.745.581-.908L9.582.092a.993.993 0 0 1 .836 0l7 3.246a1 1 0 0 1 .581.908c.004 1.647-.002 5.958-.153 6.747l-.018.11c-.995 5.355-4.638 7.763-7.517 8.843l-.008.003a.897.897 0 0 1-.605-.003c-2.88-1.08-6.514-3.479-7.518-8.843Zm14.19-.374-.02.113c-.844 4.513-3.81 6.601-6.346 7.604-2.534-1.002-5.493-3.082-6.346-7.605l-.02-.118-.005-.026v-.001l-.008-.065a5.636 5.636 0 0 1-.02-.205 19.219 19.219 0 0 1-.036-.653 72.81 72.81 0 0 1-.048-1.855C3.503 6.715 3.5 5.428 3.5 4.576L10 1.563l6.5 3.013c0 .852-.002 2.14-.02 3.343-.01.686-.024 1.336-.045 1.858-.01.261-.022.482-.035.655a5.763 5.763 0 0 1-.018.207l-.009.07-.004.02Zm-1.824-2.132a.758.758 0 0 0 0-1.07.75.75 0 0 0-1.064 0l-3.984 4.001-1.976-1.985a.75.75 0 0 0-1.064 0 .758.758 0 0 0 0 1.07l2.508 2.519a.75.75 0 0 0 1.065 0l4.515-4.535Z"></path></g></svg>
+                                </div>
+                            </li>
+                            <li class="py-2">
+                                <div class="mx-[20px] flex flex-row justify-between">
+                                    <a href="#"><span style="color:#2F1C6A;" class="font-semibold text-xl">Premium Hosting</span></a>
+                                    <svg data-v-7fc192fd="" data-v-3bed47a8="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="width: 20px; height: 20px;"><path fill="#2F1C6A" fill-rule="evenodd" clip-rule="evenodd" d="m2.18 11.103-.018-.11c-.157-.789-.165-5.1-.162-6.747.001-.392.228-.745.581-.908L9.582.092a.993.993 0 0 1 .836 0l7 3.246a1 1 0 0 1 .581.908c.004 1.647-.002 5.958-.153 6.747l-.018.11c-.995 5.355-4.638 7.763-7.517 8.843l-.008.003a.897.897 0 0 1-.605-.003c-2.88-1.08-6.514-3.479-7.518-8.843Zm14.19-.374-.02.113c-.844 4.513-3.81 6.601-6.346 7.604-2.534-1.002-5.493-3.082-6.346-7.605l-.02-.118-.005-.026v-.001l-.008-.065a5.636 5.636 0 0 1-.02-.205 19.219 19.219 0 0 1-.036-.653 72.81 72.81 0 0 1-.048-1.855C3.503 6.715 3.5 5.428 3.5 4.576L10 1.563l6.5 3.013c0 .852-.002 2.14-.02 3.343-.01.686-.024 1.336-.045 1.858-.01.261-.022.482-.035.655a5.763 5.763 0 0 1-.018.207l-.009.07-.004.02Zm-1.824-2.132a.758.758 0 0 0 0-1.07.75.75 0 0 0-1.064 0l-3.984 4.001-1.976-1.985a.75.75 0 0 0-1.064 0 .758.758 0 0 0 0 1.07l2.508 2.519a.75.75 0 0 0 1.065 0l4.515-4.535Z"></path></g></svg>
+                                </div>
+                            </li>
+                            <li class="py-2">
+                                <div class="mx-[20px] flex flex-row justify-between">
+                                    <a href="#"><span style="color:#2F1C6A;" class="font-semibold text-xl">Pro Features</span></a>
+                                    <svg data-v-7fc192fd="" data-v-3bed47a8="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="width: 20px; height: 20px;"><path fill="#2F1C6A" fill-rule="evenodd" clip-rule="evenodd" d="m2.18 11.103-.018-.11c-.157-.789-.165-5.1-.162-6.747.001-.392.228-.745.581-.908L9.582.092a.993.993 0 0 1 .836 0l7 3.246a1 1 0 0 1 .581.908c.004 1.647-.002 5.958-.153 6.747l-.018.11c-.995 5.355-4.638 7.763-7.517 8.843l-.008.003a.897.897 0 0 1-.605-.003c-2.88-1.08-6.514-3.479-7.518-8.843Zm14.19-.374-.02.113c-.844 4.513-3.81 6.601-6.346 7.604-2.534-1.002-5.493-3.082-6.346-7.605l-.02-.118-.005-.026v-.001l-.008-.065a5.636 5.636 0 0 1-.02-.205 19.219 19.219 0 0 1-.036-.653 72.81 72.81 0 0 1-.048-1.855C3.503 6.715 3.5 5.428 3.5 4.576L10 1.563l6.5 3.013c0 .852-.002 2.14-.02 3.343-.01.686-.024 1.336-.045 1.858-.01.261-.022.482-.035.655a5.763 5.763 0 0 1-.018.207l-.009.07-.004.02Zm-1.824-2.132a.758.758 0 0 0 0-1.07.75.75 0 0 0-1.064 0l-3.984 4.001-1.976-1.985a.75.75 0 0 0-1.064 0 .758.758 0 0 0 0 1.07l2.508 2.519a.75.75 0 0 0 1.065 0l4.515-4.535Z"></path></g></svg>
+                                </div>
+                            </li>
+                            <li class="py-2">
+                                <div class="mx-[20px] flex flex-row justify-between">
+                                    <a href="#"><span style="color:#2F1C6A;" class="font-semibold text-xl">Free Domains</span></a>
+                                    <svg data-v-7fc192fd="" data-v-3bed47a8="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="width: 20px; height: 20px;"><path fill="#2F1C6A" fill-rule="evenodd" clip-rule="evenodd" d="m2.18 11.103-.018-.11c-.157-.789-.165-5.1-.162-6.747.001-.392.228-.745.581-.908L9.582.092a.993.993 0 0 1 .836 0l7 3.246a1 1 0 0 1 .581.908c.004 1.647-.002 5.958-.153 6.747l-.018.11c-.995 5.355-4.638 7.763-7.517 8.843l-.008.003a.897.897 0 0 1-.605-.003c-2.88-1.08-6.514-3.479-7.518-8.843Zm14.19-.374-.02.113c-.844 4.513-3.81 6.601-6.346 7.604-2.534-1.002-5.493-3.082-6.346-7.605l-.02-.118-.005-.026v-.001l-.008-.065a5.636 5.636 0 0 1-.02-.205 19.219 19.219 0 0 1-.036-.653 72.81 72.81 0 0 1-.048-1.855C3.503 6.715 3.5 5.428 3.5 4.576L10 1.563l6.5 3.013c0 .852-.002 2.14-.02 3.343-.01.686-.024 1.336-.045 1.858-.01.261-.022.482-.035.655a5.763 5.763 0 0 1-.018.207l-.009.07-.004.02Zm-1.824-2.132a.758.758 0 0 0 0-1.07.75.75 0 0 0-1.064 0l-3.984 4.001-1.976-1.985a.75.75 0 0 0-1.064 0 .758.758 0 0 0 0 1.07l2.508 2.519a.75.75 0 0 0 1.065 0l4.515-4.535Z"></path></g></svg>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        <button class="fixed bottom-8 left-4 right-4 font-semibold py-3 mt-5 w-auto drop-shadow-lg" style="color:rgb(103,61,230); font-size:17px; border:2px solid rgb(103,61,230); border-radius:5px;">
+                            Login to Client Area
+                        </button>                        
+                    </div>
+                    <script>
+                        document.getElementById('hamburger').addEventListener('click', function() {
+                            const mobileMenu = document.getElementById('mobileMenu');
+                            mobileMenu.classList.toggle('mobile-menu-open');
+                        });
+                    </script>
+                </div>
+            </nav>
+        </div>
+        <!-- SCRIPT AND STYLE FOR DROP SHADOW ON SCROLL-->
+        <script>
+            window.addEventListener('scroll', function() {
+              var navBar = document.getElementById('navBar');
+              if (window.pageYOffset > 0) {
+                navBar.classList.add('shadow');
+              } else {
+                navBar.classList.remove('shadow');
+              }
+            });
+          </script>
+          <style>
+            .shadow {
+              box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            }
+          </style>
+          <!-- END TO SCRIPT AND STYLE FOR DROP SHADOW ON SCROLL-->
+        <div class="max-w-[1400px] w-11/12 flex md:flex-row flex-col mx-auto justify-between items-center gap-[80px] md:my-[50px] md:pt-[20px]">
+            <div class="md:w-4/12  gap-[10px] flex flex-col">
+                <h1 class="font-semibold md:text-4xl text-2xl md:text-left text-center" style="color:#2F1C6A">Everything You Need to Know about Server</h1>
+                <h2 class="font-semibold md:text-left text-center" style="color:#2F1C6A; font-size:20px;">Up to <span style="color:#673DE6">75%</span> off Hosting</h2>
+                <div class="flex flex-row gap-[5px] pt-5 max-[1024px]:mx-auto">
+                    <svg data-v-7fc192fd="" data-v-3bed47a8="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" aria-label="globe" role="presentation" style="width: 20px; height: 20px;"><path fill="#673DE6" fill-rule="evenodd" clip-rule="evenodd" d="M8.016 19.803a10.05 10.05 0 0 0 3.969 0 10.017 10.017 0 0 0 7.7-7.303A10.02 10.02 0 0 0 20 10a10.02 10.02 0 0 0-.832-4A10.017 10.017 0 0 0 11.985.197a10.047 10.047 0 0 0-3.97 0A10.017 10.017 0 0 0 .316 7.5 10.018 10.018 0 0 0 0 10a10.018 10.018 0 0 0 .832 4 10.017 10.017 0 0 0 7.184 5.803ZM2.498 14a8.517 8.517 0 0 0 5.457 4.252A12.974 12.974 0 0 1 5.627 14H2.498Zm9.547 4.252A8.517 8.517 0 0 0 17.502 14h-3.129a12.975 12.975 0 0 1-2.328 4.252ZM18.5 10c0-.87-.13-1.71-.374-2.5H14.76a13.065 13.065 0 0 1 0 5h3.366c.243-.79.374-1.63.374-2.5Zm-6.455-8.252A8.517 8.517 0 0 1 17.502 6h-3.129a12.974 12.974 0 0 0-2.328-4.252ZM5.627 6a12.974 12.974 0 0 1 2.328-4.252A8.517 8.517 0 0 0 2.498 6h3.129ZM5.24 7.5H1.874A8.498 8.498 0 0 0 1.5 10c0 .87.13 1.71.374 2.5H5.24a13.066 13.066 0 0 1 0-5Zm1.532 0A11.54 11.54 0 0 0 6.5 10c0 .859.094 1.695.272 2.5h6.455a11.542 11.542 0 0 0 0-5H6.772Zm.443 6.5A11.512 11.512 0 0 0 10 18.261 11.513 11.513 0 0 0 12.785 14h-5.57Zm0-8A11.511 11.511 0 0 1 10 1.739 11.512 11.512 0 0 1 12.785 6h-5.57Z"></path></g></svg>
+                    <span style="color:#2F1C6A;">Free Domain</span>
+                    
+                </div>
+                <div class="flex flex-row gap-[5px] pb-5 max-[1024px]:mx-auto">
+                    <svg data-v-7fc192fd="" data-v-3bed47a8="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" aria-label="headset" role="presentation" style="width: 20px; height: 20px;"><path fill="#673DE6" fill-rule="evenodd" clip-rule="evenodd" d="M2 9V8a8 8 0 1 1 16 0v1h1a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-1v1a3 3 0 0 1-3 3h-4.25a.75.75 0 0 1 0-1.5H15a1.5 1.5 0 0 0 1.5-1.5v-1H16a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h.5V8a6.5 6.5 0 1 0-13 0v1H4a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h1Zm-.5 5.5v-4h2v4h-2Zm15 0v-4h2v4h-2Z"></path></g></svg>
+                    <span style="color:#2F1C6A;">24/7 Customer Support</span>
+                </div>
+                <div class="flex flex-col gap-[10px] pb-5 max-[1024px]:mx-auto">
+                    <div class="flex flex-row md:items-end items-center">
+                        <span class="font-normal md:text-xl" style="color:#2F1C6A;">₹</span>
+                        <span class="font-bold md:text-5xl text-4xl" style="color:#2F1C6A;">149.00</span>
+                        <span class="font-normal md:text-xl" style="color:#2F1C6A;">/mo</span>
+                    </div>
+                    <h2 class="font-semibold md:text-left text-center" style="color:#2F1C6A; font-size:20px;">+ 2 Months Free</h2>
+                </div>
+                <div style="width: 150px; background-color: #673DE6; padding: 15px; border-radius: 10px; font-weight: 600; color: white;">
+                      <a href="./user-registration/signup.html"><button>Purchase Now</button></a>
+                </div>
+                <div class="flex flex-row gap-[5px] pt-2 max-[1024px]:mx-auto">
+                    <svg data-v-7fc192fd="" data-v-3bed47a8="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="width: 20px; height: 20px;"><path fill="#673DE6" fill-rule="evenodd" clip-rule="evenodd" d="m2.18 11.103-.018-.11c-.157-.789-.165-5.1-.162-6.747.001-.392.228-.745.581-.908L9.582.092a.993.993 0 0 1 .836 0l7 3.246a1 1 0 0 1 .581.908c.004 1.647-.002 5.958-.153 6.747l-.018.11c-.995 5.355-4.638 7.763-7.517 8.843l-.008.003a.897.897 0 0 1-.605-.003c-2.88-1.08-6.514-3.479-7.518-8.843Zm14.19-.374-.02.113c-.844 4.513-3.81 6.601-6.346 7.604-2.534-1.002-5.493-3.082-6.346-7.605l-.02-.118-.005-.026v-.001l-.008-.065a5.636 5.636 0 0 1-.02-.205 19.219 19.219 0 0 1-.036-.653 72.81 72.81 0 0 1-.048-1.855C3.503 6.715 3.5 5.428 3.5 4.576L10 1.563l6.5 3.013c0 .852-.002 2.14-.02 3.343-.01.686-.024 1.336-.045 1.858-.01.261-.022.482-.035.655a5.763 5.763 0 0 1-.018.207l-.009.07-.004.02Zm-1.824-2.132a.758.758 0 0 0 0-1.07.75.75 0 0 0-1.064 0l-3.984 4.001-1.976-1.985a.75.75 0 0 0-1.064 0 .758.758 0 0 0 0 1.07l2.508 2.519a.75.75 0 0 0 1.065 0l4.515-4.535Z"></path></g></svg>
+                    <span class="md:text-left text-center" style="color:#2F1C6A;">Benefit from an exclusive 30-day money-back guarantee</span>
+                </div>
+            </div>
+            <div class="my-auto mx-auto flex items-center justify-end">
+                <img src="assets/img/hero.webp" class="max-w-[840px] md:w-11/12 w-full"> 
+            </div>
+        </div>
+        <div class="max-w-[1150px] w-11/12 flex md:flex-row flex-col md:gap-[10px] gap-[30px] mx-auto justify-around items-center py-[80px]">
+            <img src="assets/img/r1.png" alt="TrustPilot" class="md:w-1/5 w-3/5 my-[20px]">
+            <img src="assets/img/r2.png" alt="Google" class="md:w-1/5 w-3/5">
+            <img src="assets/img/r3.png" alt="Hostadvice" class="md:w-1/5 w-3/5">
+            <img src="assets/img/r4.png" alt="Wpbeginner" class="md:w-1/5 w-3/5">
+        </div>
+        <div class="w-full" id="plans">
+            <div class="max-w-[1150px] w-11/12 flex flex-col gap-[18px] mx-auto justify-around items-center py-[30px]">
+                <h1 class="font-semibold text-4xl text-center" style="color:#2F1C6A">Choose Plans</h1>
+                <div class="flex lg:flex-row flex-col gap-[25px] justify-between mt-16">
+                    <div id="plan1" class="w-full max-w-[390px] hover:scale-[1.02] hover:duration-300" style="border:1px solid #D5DFFF; border-radius:6px; box-shadow: 0px 0px 20px #eceaea;">
+                        <div class="flex flex-col px-8 py-12 gap-[40px] text-center">
+                            <div class="flex flex-col gap-[7px]">
+                                <h1 class="font-semibold text-2xl" style="color:#2F1C6A">System 1</h1>
+                                <span style="color:#2F1C6A;" class="text-sm">Perfect package for general purpose <br> use</span>
+                            </div>
+                            <div class="flex flex-col gap-[14px] mx-auto">
+                                <div>
+                                    <span style="color:#727586;" class="text-md"><s>₹ 589.00</s></span>
+                                    <span class="rounded-full py-1 px-2 text-md font-semibold" style="color:#673DE6; background-color:#EBE4FF;">SAVE 75%</span>
+                                </div>
+                                <div class="flex flex-row mx-auto">
+                                    <span class="font-normal text-xl" style="color:#2F1C6A;">₹</span>
+                                    <span class="font-bold text-5xl" style="color:#2F1C6A;">149.00</span>
+                                    <span class="font-normal text-xl" style="color:#2F1C6A;">/mo</span>
+                                </div>
+                                <a href="./user-registration/signup.html"><button class="font-semibold py-3 w-full drop-shadow-lg" style="color:#ffffff; font-size:17px; background-color:#673DE6; border-radius:5px;">
+                                    Choose Plan
+                                </button></a>
+                            </div>
+                            <div style="background-color:#D5DFFF" class="h-[3px] w-full mx-auto"></div>
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Top feature comparison</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">100 GB </span>HDD Storage</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Free</span> Security 24X7</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"> Free SSL</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Easily</span> Backups</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Performance</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">1.50 GB</span> RAM</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">2 CPU</span> Cores</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Dedicated</span> Resources</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Dedicated</span> IP Address</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Security</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Cloudflare</span> Protected Nameservers</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Malware</span> Scanner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Free Bonuses</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Free</span> Email</span>
+                                        </div>
+                                    
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Free</span> Migration</span>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Service and Support</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">30-Day</span> Money-Back Guarantee</span>
+                                        </div>
+                                        <div class="logo-container">
+                                    
+                                        </div>
+                                        <div class="popup-box">
+                                            <!-- More details about the logo go here -->
+                                            <!-- You can use any content you want: text, images, etc. -->
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">24/7</span> Support</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">99.9% </span>Uptime Guarantee</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Global</span> Data Centers</span>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mx-auto flex flex-row gap-[8px]">
+                                <a href="#"><span style="color:#673DE7;" class="font-semibold">See all features</span></a>
+                                <svg data-v-7fc192fd="" data-v-e6ac469e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="arrow-down" style="width: 24px; height: 24px;"><g data-v-7fc192fd=""><path fill="#673DE7" data-v-7fc192fd="" d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"></path></g></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full max-w-[390px] hover:scale-[1.02] hover:duration-300" style="border:1px solid #D5DFFF; border-radius:6px; position: relative; box-shadow: 0px 0px 20px #eceaea;" id="plan2">
+                        <div style="position: relative; top:-20px">
+                            <img src="assets/img/new.webp" alt="Image" class="w-3/5 mx-auto">
+                            <div style="position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%);">
+                              <h1 class="font-bold text-xl" style="color: white; text-align: center;">Most Popular</h1>
+                            </div>
+                          </div>                          
+                        <div class="flex flex-col px-8 pb-10 pt-[1px] gap-[40px] text-center">
+                            <div class="flex flex-col gap-[7px]">
+                                <h1 class="font-semibold text-2xl" style="color:#2F1C6A">System 2</h1>
+                                <span style="color:#2F1C6A;" class="text-sm">Optimized for small and medium work.</span>
+                            </div>
+                            <div class="flex flex-col gap-[14px] mx-auto">
+                                <div>
+                                    <span style="color:#727586;" class="text-md"><s>₹ 699.00</s></span>
+                                    <span class="rounded-full py-1 px-2 text-md font-semibold" style="color:#FC5185; background-color:#FFE8EF;">SAVE 59%</span>
+                                </div>
+                                <div class="flex flex-row mx-auto">
+                                    <span class="font-normal text-xl" style="color:#2F1C6A;">₹</span>
+                                    <span class="font-bold text-5xl" style="color:#2F1C6A;">289.00</span>
+                                    <span class="font-normal text-xl" style="color:#2F1C6A;">/mo</span>
+                                </div>
+                                <a href="./user-registration/signup.html"><button class="font-semibold py-3 w-full drop-shadow-lg" style="color:#ffffff; font-size:17px; background-color:#FC5185; border-radius:5px;">
+                                    Choose Plan
+                                </button></a>
+                            </div>
+                            <div style="background-color:#D5DFFF" class="h-[2px] w-full mx-auto"></div>
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Top feature comparison</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">200 GB </span>HDD Storage</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Unlimited</span> Free SSL</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Daily</span> Backups Available</span>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Performance</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">2.50 GB</span> RAM</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">4 CPU</span> Cores</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Dedicated</span> Resources</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Dedicated</span> IP Address</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Security</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Cloudflare</span> Protected Nameservers</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Malware</span> Scanner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Service and Support</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">30-Day</span> Money-Back Guarantee</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">24/7</span> Support</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">99.9% </span>Uptime Guarantee</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Global</span> Data Centers</span>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mx-auto flex flex-row gap-[8px]">
+                                <a href="#"><span style="color:#FC5185;" class="font-semibold">See all features</span></a>
+                                <svg data-v-7fc192fd="" data-v-e6ac469e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="arrow-down" style="width: 24px; height: 24px;"><g data-v-7fc192fd=""><path fill="#FC5185" data-v-7fc192fd="" d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"></path></g></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="plan3" class="w-full max-w-[390px] hover:scale-[1.02] hover:duration-300" style="border:1px solid #D5DFFF; border-radius:6px; box-shadow: 0px 0px 20px #eceaea;">
+                        <div class="flex flex-col px-8 py-12 gap-[40px] text-center">
+                            <div class="flex flex-col gap-[7px]">
+                                <h1 class="font-semibold text-2xl" style="color:#2F1C6A">System 3</h1>
+                                <span style="color:#2F1C6A;" class="text-sm">Optimized to store data and<br>business purposes</span>
+                            </div>
+                            <div class="flex flex-col gap-[14px] mx-auto">
+                                <div>
+                                    <span style="color:#727586;" class="text-md"><s>₹ 1,699.00</s></span>
+                                    <span class="rounded-full py-1 px-2 text-md font-semibold" style="color:#673DE6; background-color:#EBE4FF;">SAVE 59%</span>
+                                </div>
+                                <div class="flex flex-row mx-auto">
+                                    <span class="font-normal text-xl" style="color:#2F1C6A;">₹</span>
+                                    <span class="font-bold text-5xl" style="color:#2F1C6A;">699.00</span>
+                                    <span class="font-normal text-xl" style="color:#2F1C6A;">/mo</span>
+                                </div>
+                                <a href="./user-registration/signup.html"><button class="font-semibold py-3 w-full drop-shadow-lg" style="color:#ffffff; font-size:17px; background-color:#673DE6; border-radius:5px;">
+                                   Choose Plan
+                                </button></a>
+                            </div>
+                            <div style="background-color:#D5DFFF" class="h-[3px] w-full mx-auto"></div>
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Top feature comparison</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">512 GB </span>HDD Storage</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Free</span> Domain</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Unlimited</span> Free SSL</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Daily</span> Backups </span>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Performance</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">1,50 GB</span> RAM</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">2 CPU</span> Cores</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Dedicated</span> Resources</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Dedicated</span> IP Address</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Security</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Cloudflare</span> Protected Nameservers</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Malware</span> Scanner</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex flex-col gap-[14px]">
+                                <h1 class="font-semibold text-left" style="color:#2F1C6A; font-size:17px;">Service and Support</h1>
+                                <div class="flex flex-col gap-[8px]">
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">30-Day</span> Money-Back Guarantee</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">24/7</span> Support</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">99.9% </span>Uptime Guarantee</span>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="flex flex-row justify-between">
+                                        <div class="flex flex-row gap-[5px]">
+                                            <svg data-v-7fc192fd="" data-v-0561eb7e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 24" aria-label="check" style="width: 12px; height: 24px;"><path fill="#00B090" d="M12 8.758a.694.694 0 0 1-.217.515l-5.605 5.485-1.053 1.03A.725.725 0 0 1 4.6 16a.724.724 0 0 1-.527-.212l-1.053-1.03-2.803-2.743A.694.694 0 0 1 0 11.5c0-.202.072-.374.217-.515l1.053-1.03a.725.725 0 0 1 .526-.213c.207 0 .382.071.527.213L4.6 12.19l5.078-4.977c.14-.14.33-.216.527-.212.206 0 .382.07.526.212l1.053 1.03c.142.134.22.321.217.516Z"></path></g></svg>
+                                            <span style="color:#2F1C6A;" class="text-sm"><span class="text-sm font-semibold">Global</span> Data Centers</span>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mx-auto flex flex-row gap-[8px]">
+                                <a href="#"><span style="color:#673DE7;" class="font-semibold">See all features</span></a>
+                                <svg data-v-7fc192fd="" data-v-e6ac469e="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="arrow-down" style="width: 24px; height: 24px;"><g data-v-7fc192fd=""><path fill="#673DE7" data-v-7fc192fd="" d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"></path></g></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="font-semibold py-3 mt-5 max-w-[400px] w-11/12 drop-shadow-lg hover:scale-[1.02] hover:duration-300" style="color:rgb(103,61,230); font-size:17px; border:2px solid rgb(103,61,230); border-radius:5px;">
+                    Payment Terms
+                </button>
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>
